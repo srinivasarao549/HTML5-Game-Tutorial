@@ -1,4 +1,6 @@
-var jewel = {};
+var jewel = {
+  screens : {}
+};
 
 // Wait until main document is loaded
 window.addEventListener("load", function() {
@@ -9,7 +11,9 @@ window.addEventListener("load", function() {
       load : [
         "/lib/sizzle.js",
         "/app/js/dom.js",
-        "/app/js/game.js"
+        "/app/js/game.js",
+        "/app/js/screen.splash.js",
+        "/app/js/screen.main-menu.js"
       ],
       
       // Called when all files have finished loading

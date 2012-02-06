@@ -3,6 +3,7 @@
 
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
 
     <title>Jewel Warrior</title>
     
@@ -15,14 +16,26 @@
   
   <body>
     
+    <!-- Game content goes here -->
     <div id="game">
-      <!-- Game content goes here -->
       
+      <!-- Splash screen -->
       <div class="screen" id="splash-screen">
         <h1 class="logo">Jewel<br/>Warrior</h1>
         <span class="continue">Click to continue</span>
       </div>
-      <div class="screen" id="main-menu"></div>
+
+      <!-- Main menu -->
+      <div class="screen" id="main-menu">
+        <h2 class="logo">Jewel<br/>Warrior</h2>
+        <ul class="menu">
+          <li><button name="game-screen">Play</button></li>
+          <li><button name="hiscore">Highscore</button></li>
+          <li><button name="about">About</button></li>
+          <li><button name="exit-screen">Exit</button></li>
+        </ul>
+      </div>
+
       <div class="screen" id="game-screen"></div>
       <div class="screen" id="high-scoressc"></div>
       

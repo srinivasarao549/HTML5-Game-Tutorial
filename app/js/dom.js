@@ -2,20 +2,27 @@ jewel.dom = (function() {
   
   var $ = Sizzle;
   
-  function hasClass(el, clsName) {
+  function hasClass(element, clsName) {
     var rx = new RegExp("(^|\\s)" + clsName + "(\\s|$)");
-    return rx.test(el.className);
+    return rx.test(element.className);
   }
   
-  function addClass(el, clsName) {
-    if(!hasClass(el, clsName)) {
-      el.className += " " + clsName;
+  function addClass(element, clsName) {
+    if(!hasClass(element, clsName)) {
+      element.className += " " + clsName;
     }
   }
   
-  function removeClass(el, clsName) {
+  function removeClass(element, clsName) {
     var rx = new RegExp("(^|\\s)" + clsName + "(\\s|$)");
-    el.className = el.className.replace(rx, " ");
+    element.className = element.className.replace(rx, " ");
+  }
+  
+  function bind(element, event, handler) {
+    if(typeof element == "string") {
+      element = $(element)[0];
+    }
+    element.addEventListener(event, handler, false);
   }
   
   // Expose public methods
@@ -23,7 +30,8 @@ jewel.dom = (function() {
     $           : $,
     hasClass    : hasClass,
     addClass    : addClass,
-    removeClass : removeClass
+    removeClass : removeClass,
+    bind        : bind
   };
   
 })();
